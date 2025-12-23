@@ -19,6 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* ✅ Preload Spline resources */}
+        <link
+          rel="preconnect"
+          href="https://prod.spline.design"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="dns-prefetch"
+          href="https://prod.spline.design"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
