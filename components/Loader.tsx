@@ -3,17 +3,16 @@
 
 import dynamic from 'next/dynamic';
 import React from 'react';
-import type Spline from '@splinetool/react-spline';
 
-// ✅ Dynamically import Spline with proper typing
-const SplineScene = dynamic(() => import('@splinetool/react-spline'), {
+// ✅ Import from the /next path specifically
+const SplineScene = dynamic(() => import('@splinetool/react-spline/next'), {
   ssr: false,
   loading: () => (
     <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
       <div className="text-white animate-pulse">Loading...</div>
     </div>
   ),
-}) as typeof Spline;
+}) as any;
 
 const Loader = () => {
   return (
